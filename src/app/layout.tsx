@@ -1,11 +1,16 @@
 import { Navbar } from "@/components/nav";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   weight: ["400", "600", "800"],
   subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  weight: ["400", "700"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +30,8 @@ export default function RootLayout({
       <body
         className={cx(
           "antialiased max-w-xl mx-4 mt-8 lg:mx-auto",
-          inter.className
+          inter.className,
+          jetbrainsMono.variable
         )}
       >
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
