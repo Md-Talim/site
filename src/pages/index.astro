@@ -1,0 +1,92 @@
+---
+import ArrowCard from "@components/ArrowCard.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { HOME, SITE, SOCIALS } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+---
+
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <div class="space-y-16">
+      <section class="space-y-6">
+        <div class="flex items-center gap-5">
+          <Image
+            src="/profile.png"
+            height={60}
+            width={60}
+            alt={SITE.NAME}
+            class="rounded-full"
+          />
+          <div>
+            <h1 class="animate font-semibold text-black dark:text-white">
+              {SITE.NAME}
+            </h1>
+            <p class="animate">Software Engineer &bull; B.Tech Student</p>
+          </div>
+        </div>
+        <article>
+          <p>
+            Full-Stack Developer. Studying CS Engineering. Building projects to
+            dive deep into tech. Writing to understand better. Open to
+            internships and always excited to connect with like-minded peers!
+          </p>
+        </article>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Recent projects
+          </h5>
+          <Link href="/projects"> See all projects </Link>
+        </div>
+        <ul
+          class="flex flex-col [&>li:first-child_aside]:rounded-t-lg [&>li:last-child_aside]:rounded-b-lg"
+        >
+          {projects.map((project) => <ArrowCard entry={project} />)}
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <article>
+          <p>
+            If you want to get in touch with me about something or just to say
+            hi, reach out on social media or send me an email.
+          </p>
+        </article>
+        <ul class="flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link
+                  href={SOCIAL.HREF}
+                  external
+                  aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                >
+                  {SOCIAL.NAME}
+                </Link>
+                {"/"}
+              </li>
+            ))
+          }
+          <li class="line-clamp-1">
+            <Link
+              href={`mailto:${SITE.EMAIL}`}
+              aria-label={`Email ${SITE.NAME}`}
+            >
+              {SITE.EMAIL}
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>
