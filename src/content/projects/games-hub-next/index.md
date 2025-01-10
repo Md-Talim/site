@@ -6,7 +6,7 @@ repoURL: "https://github.com/md-talim/games-hub-next"
 tags: ["Next.js", "Tailwind CSS", "Typescript"]
 ---
 
-![Games Hub Next Screenshot](/public/games-hub-next.png)
+![Games Hub Next Screenshot](/games-hub-next.png)
 
 Games Hub Next is a game browsing application that provides users with detailed information about games, including screenshots, descriptions, available platforms, and ratings. This project is built using Next.js and TypeScript, and it integrates with the RAWG.io API for game data.
 
