@@ -53,6 +53,11 @@ article {
     @apply text-black dark:text-white;
     @apply decoration-black/25 dark:decoration-white/50;
   }
+
+  p,
+  a {
+    @apply text-sm md:text-base leading-relaxed;
+  }
 }
 
 .animate {
