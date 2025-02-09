@@ -3,6 +3,7 @@ title: "Games Hub Next"
 description: "A game browsing application to get detailed information about games."
 liveURL: "https://games-hub-next.vercel.app"
 repoURL: "https://github.com/md-talim/games-hub-next"
+startedOn: "Apr 22 2023"
 tags: ["Next.js", "Tailwind CSS", "Typescript"]
 ---
 

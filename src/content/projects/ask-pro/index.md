@@ -3,6 +3,7 @@ title: "Ask Pro"
 description: "A Q&A platform designed to foster knowledge sharing and community interaction."
 liveURL: "https://askpro.vercel.app/"
 repoURL: "https://github.com/Md-Talim/ask-pro"
+startedOn: "Dec 04 2023"
 tags: ["Mongo DB", "Next.js", "Tailwind CSS", "Typescript"]
 ---
 

@@ -8,6 +8,7 @@ const projects = defineCollection({
     draft: z.boolean().optional(),
     liveURL: z.string().optional(),
     repoURL: z.string().optional(),
+    startedOn: z.coerce.date(),
     tags: z.array(z.string()),
   }),
 });
