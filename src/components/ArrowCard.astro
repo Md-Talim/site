@@ -19,6 +19,15 @@ const { entry } = Astro.props;
       {entry.data.title}
     </p>
     <p class="text-sm">{entry.data.description}</p>
+    <div class="flex flex-wrap gap-2 mt-2">
+      {
+        entry.data.tags.map((tag) => (
+          <span class="px-1.5 py-0.5 text-xs font-medium rounded-md bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 transition-colors duration-300 ease-in-out">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
     <aside
       class="absolute -z-10 inset-0 -inset-x-3 -top-[1px] group-hover:bg-zinc-200 group-hover:dark:bg-zinc-800 transition-colors duration-300 ease-in-out"
     >
